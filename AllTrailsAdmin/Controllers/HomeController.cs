@@ -9,25 +9,47 @@ namespace AllTrailsAdmin.Controllers
         // Constructor
         public HomeController()
         {
-            Console.WriteLine("Constructor is called!");
         }
 
         // Action Method /Index
         public IActionResult Index()
         {
-            Console.WriteLine("Hello from the Home/Index.");
-
             return View();
         }
 
         // Action Method /Privacy
-        public IActionResult Privacy()
+        public ViewResult Privacy()
         {
-            Console.WriteLine("Hello from the Home/Privacy.");
-
             return View();
         }
 
+        // Action Method /HelloWorld
+        public IActionResult HelloWorld()
+        {
+            //return View();
+            return  NotFound();
+        }
+
+        // Action method
+        public JsonResult PersonJson()
+        {
+            Person person = new Person();
+            person.Id = 1;
+            person.Name = "Han Solo";
+            person.Email = "hansolo@rebels.ca";
+
+            return Json(person);
+        }
+
+        public ContentResult PlainText()
+        {
+            return Content("This is plain text content.");
+        }
+
+
+        // Create a new action method called PersonJson
+        // Create a Person class with id, name, and email
+        // Initialize a sample Person and return it as Json in the Action Method
 
 
 

@@ -1,73 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-
-    string name = "Mike";
-    bool showMessage = false;
-
 }
 
 <div>
     <h1 class="display-4">Welcome Mike!</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
-<p>
-    Hello @name!
-    
-    <br />
-
-    @if (showMessage) // is true
-    {
-        <span>This is my first ASP.NET Core MVC Web App.</span>
-    }
-    else
-    {
-        <span>Nothing to say. :(</span>
-    }
-</p>
-
-@{  
-    //List<string> fruits = new List<string> { "Apple", "Banana", "Cherry" };
-
-    // My collection of fruits
-    List<string> fruits = new List<string>();
-    fruits.Add("Apple");
-    fruits.Add("Banana");
-    fruits.Add("Cherry");
-}
-
-<h2>
-    My Favorite Fruits
-</h2>
-
-<ul>
-    @foreach (string fruit in fruits)
-    {
-        <li>
-            The value of fruit: @fruit
-        </li>
-    }
-</ul>
-
-@{
-    // Create an list of objects with 3 properties; id, name, email.  Add 3 people to the list.
-
-    // Then outut on the page
-
-    var people = new List<Person>
-    {
-        new Person { Id=1, Name="Jar Jar Binks", Email="jajar@hurraygungans.ca"},
-        new Person { Id=2, Name="Grogu", Email="grogu@jedidaycare.com" },
-        new Person { Id=2, Name="Sebulba", Email="sebulba@podracers.com" }        
-    };
-}
-
-<h2>Annoying Star Wars Characters</h2>
-<ul>
-    @foreach (var person in people)
-    {
-    <li>
-        @person.Id - @person.Name - @person.Email
-    </li>
-    }
-</ul>

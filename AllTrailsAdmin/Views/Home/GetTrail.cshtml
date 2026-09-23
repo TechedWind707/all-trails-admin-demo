@@ -1,0 +1,20 @@
+﻿@model AllTrailsAdmin.Models.Trail
+
+@{
+    ViewData["Title"] = "Trail Details - " + Model.Title;
+}
+
+<h1>
+    @Model.Title
+</h1>
+
+<p>
+    @Model.Description
+</p>
+
+<p>
+    Length: @Model.Length km<br />
+    Elevation Gain: @Model.ElevationGain m<br />
+    Location: @Model.Location
+</p>
+

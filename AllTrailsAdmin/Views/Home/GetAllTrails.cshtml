@@ -1,0 +1,18 @@
+﻿@model List<AllTrailsAdmin.Models.Trail>
+
+@{
+    ViewData["Title"] = "All Trails";
+}
+
+<h1>All Trails</h1>
+
+<p>
+    @Model.Count trails.
+</p>
+
+@foreach(var trail in Model)
+{
+    <h2>
+        @trail.Title   
+    </h2>
+}

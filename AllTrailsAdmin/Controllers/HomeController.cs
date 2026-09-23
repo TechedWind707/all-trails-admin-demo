@@ -18,38 +18,70 @@ namespace AllTrailsAdmin.Controllers
         }
 
         // Action Method /Privacy
-        public ViewResult Privacy()
+        public IActionResult Privacy()
         {
             return View();
         }
 
-        // Action Method /HelloWorld
-        public IActionResult HelloWorld()
+        public IActionResult GetTrail()
         {
-            //return View();
-            return  NotFound();
+            // create a sample trail object (later, we will pull this from db)
+            Trail trail = new Trail();
+            trail.Id = 1;
+            trail.Title = "Pot Lake Trail";
+            trail.Description = "A scenic trail with beautiful views of the lake.";
+            trail.Length = 5.2;
+            trail.ElevationGain = 300;
+            trail.Location = "Pot Lake Loop, Otter Lake, NS B3Z 1A9";
+
+            return View(trail); // pass trail object into view to display the trail details
         }
 
-        // Action method
-        public JsonResult PersonJson()
+        public IActionResult GetAllTrails()
         {
-            Person person = new Person();
-            person.Id = 1;
-            person.Name = "Han Solo";
-            person.Email = "hansolo@rebels.ca";
+            List<Trail> trails = new List<Trail>();
 
-            return Json(person);
+            Trail trail = new Trail();
+            trail.Id = 1;
+            trail.Title = "Pot Lake Trail";
+            trail.Description = "A scenic trail with beautiful views of the lake.";
+            trail.Length = 5.2;
+            trail.ElevationGain = 300;
+            trail.Location = "Pot Lake Loop, Otter Lake, NS B3Z 1A9";
+
+            Trail trail2 = new Trail();
+            trail2.Id = 2;
+            trail2.Title = "Johnson Lake Trail";
+            trail2.Description = "A scenic trail with beautiful views of the lake.";
+            trail2.Length = 5.2;
+            trail2.ElevationGain = 300;
+            trail2.Location = "Pot Lake Loop, Otter Lake, NS B3Z 1A9";
+
+            Trail trail3 = new Trail();
+            trail3.Id = 3;
+            trail3.Title = "Point Pleasant Park";
+            trail3.Description = "A scenic trail with beautiful views of the lake.";
+            trail3.Length = 5.2;
+            trail3.ElevationGain = 300;
+            trail3.Location = "Pot Lake Loop, Otter Lake, NS B3Z 1A9";
+
+            trails.Add(trail);
+            trails.Add(trail2);
+            trails.Add(trail3);
+
+            return View(trails);
         }
 
-        public ContentResult PlainText()
-        {
-            return Content("This is plain text content.");
-        }
+
+        /*
+         *  Add an Action Method to display a list of trails.
+            Create a sample list including 3 trails (objects).
+            Pass the list object into a View.
+            Display the records in the View in a table format.
+         */
 
 
-        // Create a new action method called PersonJson
-        // Create a Person class with id, name, and email
-        // Initialize a sample Person and return it as Json in the Action Method
+
 
 
 

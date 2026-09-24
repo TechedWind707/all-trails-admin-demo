@@ -13,5 +13,7 @@
         public int ElevationGain { get; set; } // 200m
 
         public string Location { get; set; } = string.Empty; // address, city, province... display Google map later
+
+        public DateTime CreatedDate { get; set; } = DateTime.Now; // default to current timestamp
     }
 }

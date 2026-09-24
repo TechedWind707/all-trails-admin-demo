@@ -52,7 +52,7 @@ namespace AllTrailsAdmin.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Trail");
+                    b.ToTable("Trail", (string)null);
                 });
 #pragma warning restore 612, 618
         }
